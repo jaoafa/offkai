@@ -1,0 +1,29 @@
+{
+  "name": "@jaoafa/offkai",
+  "version": "1.0.0",
+  "description": "jao community off-line events history.",
+  "keywords": [
+    "jaoafa"
+  ],
+  "homepage": "https://github.com/jaoafa/offkai#readme",
+  "bugs": {
+    "url": "https://github.com/jaoafa/offkai/issues"
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Hiratake",
+      "url": "https://hiratake.xyz"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaoafa/offkai.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {}
+}
