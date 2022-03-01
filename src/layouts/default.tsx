@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 import { css } from '@emotion/react'
-import { LCenter } from '@/components'
+import { LStack, LCenter } from '@/components'
 import { primary } from '@/utils/colors'
 
 // ----------------------------------------
@@ -22,7 +22,9 @@ export const DefaultLayout = (props: DefaultLayoutProps) => {
   return (
     <div css={rootStyle}>
       <LCenter max="630px" gutters="24px">
-        {props.children}
+        <LStack>
+          <div>{props.children}</div>
+        </LStack>
       </LCenter>
     </div>
   )
