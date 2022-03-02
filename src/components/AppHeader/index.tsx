@@ -12,9 +12,9 @@ import { rem } from '@/utils/sizes'
 
 export const AppHeader = () => {
   return (
-    <header css={rootStyle}>
+    <header css={rootStyle()}>
       <LCluster align="center" justify="space-between" space="24px">
-        <Link to="/" css={titleStyle}>
+        <Link to="/" css={titleStyle()}>
           offkai
         </Link>
         <div></div>

@@ -1,7 +1,6 @@
 // LCenter
 
-import * as CSS from 'csstype'
-import { ReactNode } from 'react'
+import { ReactNode, CSSProperties } from 'react'
 import { css } from '@emotion/react'
 
 // ----------------------------------------
@@ -12,9 +11,9 @@ export type LayoutCenterProps = {
   /** 子要素 */
   children?: ReactNode
   /** コンテンツの最大幅 */
-  max?: CSS.Properties['maxWidth']
+  max?: CSSProperties['maxWidth']
   /** コンテンツ両端の最小限の余白 */
-  gutters?: CSS.Properties['paddingRight'] | CSS.Properties['paddingLeft']
+  gutters?: CSSProperties['paddingRight'] | CSSProperties['paddingLeft']
   /** 子要素を中央揃えにするか */
   intrinsic?: boolean
 }
@@ -31,19 +30,23 @@ export const LCenter = (props: LayoutCenterProps) => {
 // Styles
 // ----------------------------------------
 
-const rootStyle = (props: LayoutCenterProps) => css`
-  box-sizing: content-box;
-  max-width: ${props.max || '32em'};
-  padding-right: ${props.gutters};
-  padding-left: ${props.gutters};
-  margin-right: auto;
-  margin-left: auto;
+const rootStyle = (props: LayoutCenterProps) => {
+  return css`
+    box-sizing: content-box;
+    max-width: ${props.max || '32em'};
+    padding-right: ${props.gutters};
+    padding-left: ${props.gutters};
+    margin-right: auto;
+    margin-left: auto;
 
-  ${props.intrinsic && intrinsicStyle}
-`
+    ${props.intrinsic && intrinsicStyle()}
+  `
+}
 
-const intrinsicStyle = css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
+const intrinsicStyle = () => {
+  return css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `
+}

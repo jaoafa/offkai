@@ -1,7 +1,6 @@
 // LCluster
 
-import * as CSS from 'csstype'
-import { ReactNode } from 'react'
+import { ReactNode, CSSProperties } from 'react'
 import { css } from '@emotion/react'
 
 // ----------------------------------------
@@ -12,11 +11,11 @@ export type LayoutClusterProps = {
   /** 子要素 */
   children?: ReactNode
   /** 水平方向の配置 */
-  justify?: CSS.Properties['justifyContent']
+  justify?: CSSProperties['justifyContent']
   /** 垂直方向の配置 */
-  align?: CSS.Properties['alignItems']
+  align?: CSSProperties['alignItems']
   /** コンテンツ間の最小限の余白 */
-  space?: CSS.Properties['gap']
+  space?: CSSProperties['gap']
 }
 
 // ----------------------------------------
@@ -31,10 +30,12 @@ export const LCluster = (props: LayoutClusterProps) => {
 // Styles
 // ----------------------------------------
 
-const rootStyle = (props: LayoutClusterProps) => css`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${props.space};
-  align-items: ${props.align || 'flex-start'};
-  justify-content: ${props.justify || 'flex-start'};
-`
+const rootStyle = (props: LayoutClusterProps) => {
+  return css`
+    display: flex;
+    flex-wrap: wrap;
+    gap: ${props.space};
+    align-items: ${props.align || 'flex-start'};
+    justify-content: ${props.justify || 'flex-start'};
+  `
+}

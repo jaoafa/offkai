@@ -20,7 +20,7 @@ export type DefaultLayoutProps = {
 
 export const DefaultLayout = (props: DefaultLayoutProps) => {
   return (
-    <div css={rootStyle}>
+    <div css={rootStyle()}>
       <LCenter max="630px" gutters="24px">
         <LStack>
           <AppHeader />
@@ -35,7 +35,9 @@ export const DefaultLayout = (props: DefaultLayoutProps) => {
 // Styles
 // ----------------------------------------
 
-const rootStyle = css`
-  min-height: 100vh;
-  background-color: ${primary[50]};
-`
+const rootStyle = () => {
+  return css`
+    min-height: 100vh;
+    background-color: ${primary[50]};
+  `
+}
