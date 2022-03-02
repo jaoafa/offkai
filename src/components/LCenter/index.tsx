@@ -18,6 +18,8 @@ export type LayoutCenterProps = {
   gutters?: CSSProperties['paddingRight'] | CSSProperties['paddingLeft']
   /** 子要素を中央揃えにするか */
   intrinsic?: boolean
+  /** テキストを中央揃えにするか */
+  andText?: boolean
 }
 
 // ----------------------------------------
@@ -43,6 +45,7 @@ const rootStyle = (props: LayoutCenterProps) => {
     margin-left: auto;
 
     ${props.intrinsic && intrinsicStyle()}
+    ${props.andText && andTextStyle()}
   `
 }
 
@@ -51,5 +54,11 @@ const intrinsicStyle = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+  `
+}
+
+const andTextStyle = () => {
+  return css`
+    text-align: center;
   `
 }
