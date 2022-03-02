@@ -1,6 +1,6 @@
 // LCluster
 
-import { ReactNode, CSSProperties } from 'react'
+import { CSSProperties, ElementType, ReactNode } from 'react'
 import { css } from '@emotion/react'
 
 // ----------------------------------------
@@ -8,6 +8,8 @@ import { css } from '@emotion/react'
 // ----------------------------------------
 
 export type LayoutClusterProps = {
+  /** 使用するタグ */
+  tag?: ElementType
   /** 子要素 */
   children?: ReactNode
   /** 水平方向の配置 */
@@ -23,7 +25,8 @@ export type LayoutClusterProps = {
 // ----------------------------------------
 
 export const LCluster = (props: LayoutClusterProps) => {
-  return <div css={rootStyle(props)}>{props.children}</div>
+  const ComponentTag = props.tag || 'div'
+  return <ComponentTag css={rootStyle(props)}>{props.children}</ComponentTag>
 }
 
 // ----------------------------------------
