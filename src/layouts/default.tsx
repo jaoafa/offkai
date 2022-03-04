@@ -22,7 +22,7 @@ export const DefaultLayout = (props: DefaultLayoutProps) => {
   return (
     <div css={rootStyle()}>
       <LCenter max="630px" gutters="24px">
-        <LStack>
+        <LStack space="40px">
           <AppHeader />
           <div>{props.children}</div>
         </LStack>
